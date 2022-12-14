@@ -1,0 +1,18 @@
+install.packages("ggplot2")
+install.packages("ggmap")
+
+library(tidyverse)
+library(ggmap)
+library(tibble)
+
+register_google( key = "AIzaSyAosDj_rnOa7bZT1rb8R39cqwR3052-dpA")
+
+##ejemplo
+
+Campana <- geocode("Campana, Argentina", zoom = 13)
+ggmap(get_map(Campana, maptype = "roadmap"))
+
+##ejemplo2
+
+micasa <- get_map("Campana", maptype = "toner", zoom = 14)
+ggmap(micasa)
